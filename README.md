@@ -29,13 +29,3 @@ breakpoint. Renaming all image files to follow lowercase no-space conventions wa
 - Why semantic HTML, ARIA labels, and keyboard accessibility matter beyond just validators.
 - How Schema.org structured data helps search engines understand restaurant content.
 
----
-
-## Assets & Resources
-
-| Asset | Source | Notes |
-| Bootstrap 5.3.3 | getbootstrap.com | CSS + JS framework |
-| Animate.css 4.1.1 | animate.style | Additional CSS animation library |
-| Google Fonts – Caveat | fonts.google.com
-| Google Fonts – Lato | fonts.google.com 
-| hero-image.jpg | Unsplash – photographer name | Stock photo |
