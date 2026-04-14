@@ -1,0 +1,387 @@
+:root {
+  /* Brand colours */
+  --clr-primary:   #4a7c35;   /* dark green — main brand */
+  --clr-secondary: #80b940;   /* lime green  — accents / footer bg */
+  --clr-accent:    #c0392b;   /* red         — CTA buttons / nav open */
+  --clr-light:     #f9f6f0;   /* warm off-white background */
+  --clr-dark:      #1e2a18;   /* near-black text */
+  --clr-muted:     #5a6b4e;   /* muted green for subtitles */
+
+  /* Bootstrap colour overrides */
+  --bs-primary:        var(--clr-primary);
+  --bs-primary-rgb:    74, 124, 53;
+  --bs-link-color:     var(--clr-primary);
+  --bs-body-bg:        var(--clr-light);
+  --bs-body-color:     var(--clr-dark);
+
+  /* Typography */
+  --font-display: 'Caveat', cursive;          /* headings / display */
+  --font-body:    'Lato', sans-serif;         /* body copy */
+
+  /* Spacing */
+  --section-gap: 3.5rem;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--clr-primary);
+}
+
+a {
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+a:hover { color: var(--clr-accent); text-decoration: underline; }
+
+img {
+  /* Images scale to their container and never overflow */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Skip Link (accessibility) ---------- */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 0;
+  background: var(--clr-accent);
+  color: #fff;
+  padding: .5rem 1rem;
+  z-index: 9999;
+  font-weight: 700;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus { top: 0; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+/* Logo image inside navbar */
+.navbar-brand img {
+  height: 60px;
+  width: auto;
+}
+
+/* Hamburger lines — custom green colour */
+.navbar-toggler {
+  border: none;
+  padding: .25rem .5rem;
+}
+.navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(74,124,53,.35); }
+
+.navbar-toggler-icon {
+  /* Override Bootstrap default with green lines */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%234a7c35' stroke-width='2.5' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Nav links */
+.navbar-nav .nav-link {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--clr-dark);
+  padding: .5rem 1rem;
+  letter-spacing: .03em;
+  transition: color .2s;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--clr-primary);
+}
+
+/* Mobile nav dropdown background */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: var(--clr-accent);
+    border-radius: 0 0 8px 8px;
+    padding: 1rem 1.5rem;
+  }
+  .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.25rem;
+  }
+  .navbar-nav .nav-link:hover { color: var(--clr-light); }
+}
+
+/* ---------- Hero Banner ---------- */
+.hero {
+  width: 100%;
+  overflow: hidden;
+  max-height: 420px;
+}
+.hero picture,
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---------- Section headings ---------- */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--clr-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Home page — gallery thumbnails ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem;
+}
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  transition: transform .3s, box-shadow .3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+
+/* ---------- Opening Hours table ---------- */
+.hours-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+}
+.hours-table thead tr {
+  background-color: var(--clr-primary);
+  color: #fff;
+}
+.hours-table thead th {
+  padding: .75rem 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: .05em;
+}
+.hours-table tbody tr:nth-child(odd)  { background-color: #e8f3de; }
+.hours-table tbody tr:nth-child(even) { background-color: #d0e9b8; }
+.hours-table tbody td {
+  padding: .75rem 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+/* ---------- Contact section ---------- */
+.contact-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.contact-label {
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+
+/* ---------- About page — story text ---------- */
+.story-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Signature dish cards */
+.signature-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+  transition: transform .3s;
+}
+.signature-card:hover { transform: translateY(-4px); }
+.signature-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.signature-card .card-body { padding: 1rem 1.25rem; }
+
+/* Explore button */
+.btn-explore {
+  background-color: var(--clr-accent);
+  color: #fff;
+  border: none;
+  padding: .55rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background .2s, transform .2s;
+  display: inline-block;
+  margin-top: 1rem;
+}
+.btn-explore:hover {
+  background-color: #a93226;
+  color: #fff;
+  transform: scale(1.03);
+}
+
+/* Join team box */
+.join-box {
+  background: #fff;
+  border: 2px solid var(--clr-secondary);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+/* ---------- Menu page ---------- */
+.menu-section-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--clr-dark);
+  border-bottom: 2px solid var(--clr-secondary);
+  padding-bottom: .4rem;
+  margin-bottom: 1rem;
+}
+
+/* Individual menu dish card */
+.dish-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 10px;
+  padding: .9rem;
+  margin-bottom: .9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  transition: box-shadow .25s;
+}
+.dish-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.14); }
+.dish-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.dish-info { flex: 1; }
+.dish-name {
+  font-weight: 700;
+  color: var(--clr-primary);
+  font-size: .95rem;
+  margin-bottom: .2rem;
+}
+.dish-desc {
+  font-size: .82rem;
+  color: #555;
+  margin-bottom: .3rem;
+  line-height: 1.5;
+}
+.dish-price {
+  font-weight: 800;
+  color: var(--clr-accent);
+  font-size: 1rem;
+}
+
+/* ---------- Clickable image banners (combo + rewards) ---------- */
+.combo-banner,
+.rewards-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.combo-banner img,
+.rewards-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  opacity: 1;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.combo-banner:hover img,
+.rewards-box:hover img {
+  transform: scale(1.03);
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.combo-banner:hover .banner-overlay,
+.rewards-box:hover .banner-overlay {
+  background: rgba(0, 0, 0, 0.52);
+}
+
+.banner-label {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+  padding: 1.5rem 1rem;
+  font-size: .9rem;
+}
+footer a { color: var(--clr-dark); font-weight: 600; }
+footer a:hover { color: var(--clr-primary); }
+.footer-links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+.footer-links li + li::before { content: '|'; margin-right: 1rem; }
+
+/* ---------- Utility ---------- */
+.section-pad { padding-top: var(--section-gap); padding-bottom: var(--section-gap); }
+.text-green  { color: var(--clr-primary)  }
+.text-red    { color: var(--clr-accent) ; }
+
+/* ---------- Responsive tweaks ---------- */
+@media (min-width: 768px) {
+  /* Tablet: hero taller */
+  .hero { max-height: 520px; }
+
+  /* Gallery 3-up on tablet */
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 992px) {
+  /* Desktop: hero full height */
+  .hero { max-height: 600px; }
+
+  /* Larger dish card images on desktop */
+  .dish-card img { width: 120px; height: 120px; }
+}
