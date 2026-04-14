@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
-    <!-- ================================================
-       Page: Home (index.html)
-       Description: Landing page for The Green Plate vegetarian
-       restaurant. Shows hero image, food gallery, opening hours,
-       and contact info.
-  ================================================ -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="The Green Plate  fresh, seasonal vegetarian dining in Ottawa, ON." />
@@ -42,34 +36,36 @@
         }
     </script>
 </head>
- 
+
 <body>
- 
+
     <!-- ===== Skip Navigation (keyboard / screen reader accessibility) ===== -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
- 
+
     <!-- ===== NAVBAR ===== -->
     <!-- role="banner" is implied by <header> — marks the site-wide header -->
     <header>
         <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
             <div class="container-fluid px-3 px-md-4">
- 
+
                 <!-- Brand: pure CSS text logo — no image file needed -->
                 <a class="navbar-brand brand-logo" href="index.html" aria-label="The Green Plate – Home">
                     <!-- SVG leaf/plate icon drawn in CSS-friendly inline SVG -->
                     <span class="brand-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none" stroke="#2e5a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Leaf icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none"
+                            stroke="#2e5a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img"
+                            aria-label="Leaf icon">
                             <!-- Plate circle -->
-                            <circle cx="18" cy="18" r="15"/>
+                            <circle cx="18" cy="18" r="15" />
                             <!-- Fork tines -->
-                            <line x1="13" y1="10" x2="13" y2="16"/>
-                            <line x1="15" y1="10" x2="15" y2="16"/>
-                            <line x1="17" y1="10" x2="17" y2="16"/>
+                            <line x1="13" y1="10" x2="13" y2="16" />
+                            <line x1="15" y1="10" x2="15" y2="16" />
+                            <line x1="17" y1="10" x2="17" y2="16" />
                             <!-- Fork handle -->
-                            <line x1="15" y1="16" x2="15" y2="26"/>
+                            <line x1="15" y1="16" x2="15" y2="26" />
                             <!-- Knife -->
-                            <line x1="22" y1="10" x2="22" y2="26"/>
-                            <path d="M22 10 Q25 13 22 16"/>
+                            <line x1="22" y1="10" x2="22" y2="26" />
+                            <path d="M22 10 Q25 13 22 16" />
                         </svg>
                     </span>
                     <!-- Restaurant name styled with Caveat font -->
@@ -78,13 +74,13 @@
                         <span class="brand-name">Green Plate</span>
                     </span>
                 </a>
- 
+
                 <!-- Hamburger toggle (visible on mobile) -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                     aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
- 
+
                 <!-- Collapsible nav links -->
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto" role="list">
@@ -99,24 +95,22 @@
                         </li>
                     </ul>
                 </div>
- 
+
             </div>
         </nav>
     </header>
- 
+
     <!--MAIN CONTENT -->
     <main id="main-content">
- 
+
         <!--Hero banner ── -->
         <section class="hero" aria-label="Hero image of fresh vegetarian food">
             <picture>
-                <source  media="(min-width: 768px)" />
-                <img src="images/header image.jpg"
-                    alt="A vibrant spread of fresh vegetarian dishes including avocado toast, caprese, and bruschetta"
-                    class="animate__animated animate__fadeIn" />
+                <source srcset="images/header-image.jpg" media="(min-width: 768px)" />
+                <img src="images/header-image.jpg" alt="..." />
             </picture>
         </section>
- 
+
         <!-- ── Food gallery ── -->
         <section class="section-pad" aria-labelledby="gallery-heading">
             <div class="container">
@@ -134,7 +128,7 @@
                     </div>
                     <div role="listitem">
                         <picture>
-                            <source  media="(min-width: 768px)" />
+                            <source media="(min-width: 768px)" />
                             <img src="images/salad.jpg"
                                 alt="Bright Greek-style salad with tomatoes, cucumber, olives and feta"
                                 loading="lazy" />
@@ -142,20 +136,20 @@
                     </div>
                     <div role="listitem">
                         <picture>
-                            <source  media="(min-width: 768px)" />
-                            <img src="images/stirfy.jpg"
-                                alt="Sizzling tofu and broccoli stir-fry in a glossy sauce" loading="lazy" />
+                            <source media="(min-width: 768px)" />
+                            <img src="images/stirfy.jpg" alt="Sizzling tofu and broccoli stir-fry in a glossy sauce"
+                                loading="lazy" />
                         </picture>
                     </div>
                 </div>
             </div>
         </section>
- 
-        <!-- ── Opening Hours ── -->
+
+        <!--Opening Hours  -->
         <section class="section-pad bg-white" aria-labelledby="hours-heading">
             <div class="container">
                 <h2 class="section-title" id="hours-heading">Opening Hours</h2>
- 
+
                 <!-- Semantic table with proper thead/tbody for screen readers -->
                 <table class="hours-table" aria-describedby="hours-heading">
                     <thead>
@@ -177,12 +171,12 @@
                 </table>
             </div>
         </section>
- 
+
         <!-- ── Contact ── -->
         <section class="section-pad" aria-labelledby="contact-heading">
             <div class="container">
                 <h2 class="section-title" id="contact-heading">Contact Us</h2>
- 
+
                 <div class="contact-section row g-4">
                     <!-- Left column: phone + email -->
                     <div class="col-12 col-md-6">
@@ -196,7 +190,7 @@
                             <a href="mailto:info@freshgreens.ca">info@freshgreens.ca</a>
                         </p>
                     </div>
- 
+
                     <!-- Right column: address + instagram -->
                     <div class="col-12 col-md-6">
                         <p>
@@ -212,22 +206,22 @@
                             </a>
                         </p>
                     </div>
-                </div><!-- /contact-section -->
+                </div>
             </div>
         </section>
- 
+
     </main>
- 
+
     <!-- FOOTER  -->
     <footer>
         <div class="container-fluid px-3 px-md-4">
             <div class="row align-items-center gy-2">
- 
+
                 <!-- Copyright -->
                 <div class="col-12 col-md-6">
                     <p class="mb-0"> 2026 Fresh Greens. All rights reserved.</p>
                 </div>
- 
+
                 <!-- Quick links -->
                 <div class="col-12 col-md-6 text-md-end">
                     <nav aria-label="Footer navigation">
@@ -238,19 +232,18 @@
                         </ul>
                     </nav>
                 </div>
- 
+
                 <!-- Legal links -->
                 <div class="col-12 text-center mt-2">
                     <a href="#" aria-label="Read our Privacy Policy">Privacy Policy</a>
                     <a href="#" aria-label="Read our Terms of Service">Terms of Service</a>
                 </div>
- 
+
             </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
- 
+
 </body>
- 
+
 </html>
- 
