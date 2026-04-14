@@ -1,7 +1,7 @@
 # mtm6201-final
 # The Green Plate – Final Project
 
-**Live site:** 
+**Live site:** https://kahi0021.github.io/mtm6201-final/
 
 ## Figma Designs
 https://www.figma.com/board/4IhGvsoULgvgRSBw79Jw1G/Untitled?node-id=0-1&p=f
