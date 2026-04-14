@@ -29,3 +29,16 @@ breakpoint. Renaming all image files to follow lowercase no-space conventions wa
 - Why semantic HTML, ARIA labels, and keyboard accessibility matter beyond just validators.
 - How Schema.org structured data helps search engines understand restaurant content.
 
+## Assets & Resources Used
+
+### Frameworks & Libraries
+- Bootstrap 5.3 (for responsive layout)
+- Animate.css (for animations)
+
+### Fonts
+- Google Fonts:
+  - Caveat
+  - Lato
+
+### Images (Stock Images)
+- Images used in this project are stock images (not created by me)
